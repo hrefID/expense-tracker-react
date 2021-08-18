@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  background: #121212;
+  color: #fafafa;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container{
+  width: 100vw !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 3rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container{
+  margin-top: 2rem;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+  line-height: 1em;
+}
+
+.inc-exp-container{
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 250px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  position: relative;
+  align-self: center;
+}
+
+.inc-exp-container::after{
+  content: '';
+  width: 1px;
+  height: 80%;
+  background: #fafafa;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inc-exp-container div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inc-exp-container .minus, .list .minus span{
+  color: #ff261b ;
+}
+.inc-exp-container .plus, .list .plus span{
+  color: #77dd77;
+}
+
+h3{
+  display: block;
+  width: 100%;
+  border-bottom: #fafafa 1px solid;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.list{
+  list-style-type: none;
+  width: 100%;
+}
+
+.list li{
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255,255,255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.list li::after{
+  content: '';
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.list .minus::after{
+  background: #ff261b ;
+}
+
+.list .plus::after{
+  background: #77dd77;
+}
+
+.list li button{
+  position: absolute;
+  top: 0;
+  right: 100%;
+  border: none;
+  background-color: #ff6961;
+  color: #fafafa;
+  width: 30px;
+  height: 100%;
+  font-size: 1em;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .5s ease;
+}
+
+.list li:hover button{
+  opacity: 1;
+}
+
+form{
+  margin-top: 1em;
+  width: 100%;
+}
+
+form label{
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+form input{
+  margin-bottom: 1em;
+  width: 100%;
+  padding: 10px;
+}
+
+form input:focus{
+  outline: none;
+}
+
+form button{
+  margin-top: 1em;
+  border: none;
+  background-color: #77dd77;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
 }
